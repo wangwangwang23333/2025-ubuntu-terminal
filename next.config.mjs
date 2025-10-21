@@ -9,4 +9,4 @@ const nextConfig = {
   // assetPrefix: process.env.NODE_ENV === 'production' ? '/resume/' : '',
 }
 
-module.exports = nextConfig
+export default nextConfig
