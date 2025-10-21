@@ -429,8 +429,38 @@ i::...:.i,;.jLLLLtjittttLfffjttttiiiittjKji;EG::::
       {/* 背景文字 - 只在所有钉子掉落后显示 */}
       {allNailsFallen && (
         <div className="absolute inset-0 flex items-center justify-center">
-          <div className="text-6xl font-bold text-gray-300 opacity-20 select-none">
-            下一步，目前尚未制作
+          <div
+            className="flex flex-col items-center justify-center cursor-pointer select-none group"
+            style={{ width: 140 }}
+            onDoubleClick={() => window.open("https://wangwangwang.website/2025-chat-room", "_blank")}
+            title="双击进入聊天室"
+          >
+            {/* 复古气泡icon */}
+            <svg width="72" height="64" viewBox="0 0 72 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="bubbleGrad" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stopColor="#f7e7a7" />
+                  <stop offset="100%" stopColor="#b6e3c6" />
+                </linearGradient>
+              </defs>
+              <rect x="8" y="14" width="56" height="32" rx="14" fill="url(#bubbleGrad)" stroke="#c9b18a" strokeWidth="2"/>
+              <ellipse cx="36" cy="30" rx="20" ry="10" fill="#fff" opacity="0.18"/>
+              <circle cx="24" cy="32" r="3" fill="#fff"/>
+              <circle cx="36" cy="32" r="3" fill="#fff"/>
+              <circle cx="48" cy="32" r="3" fill="#fff"/>
+              {/* 尾巴 */}
+              <path d="M36 46 Q38 54 44 54 Q40 50 36 46 Z" fill="#f7e7a7" stroke="#c9b18a" strokeWidth="1"/>
+            </svg>
+            <span
+              className="mt-2 text-lg font-bold"
+              style={{
+                color: '#f7e7a7',
+                textShadow: '2px 2px 0 #b6e3c6, 0 0 2px #c9b18a',
+                WebkitTextStroke: '1px #c9b18a',
+                fontFamily: 'SimHei, Arial, sans-serif',
+                letterSpacing: '2px',
+              }}
+            >聊天室</span>
           </div>
         </div>
       )}
