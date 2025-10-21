@@ -40,35 +40,35 @@ const initialFileSystem: FileSystem = {
             name: "images",
             type: "directory",
             children: {
-              "键盘.png": {
-                name: "键盘.png",
+              "键盘": {
+                name: "键盘",
                 type: "file",
                 content: "This is a hidden secret file!\nOnly visible with secretfile command.",
-                filePath: "/info",
+                filePath: "/2025-ubuntu-terminal/info",
               },
               "合照.png": {
                 name: "合照.png",
                 type: "image",
-                imagePath: "/2.png",
+                imagePath: "/2025-ubuntu-terminal/2.png",
                 content: "[Image: 合照.png]",
               },
               "生日.png": {
                 name: "生日.png",
                 type: "image",
-                imagePath: "/3.png",
+                imagePath: "/2025-ubuntu-terminal/3.png",
                 content: "[Image: 生日.png]",
               },
               "生日礼物.png": {
                 name: "生日礼物.png",
                 type: "image",
-                imagePath: "/生日礼物.png",
+                imagePath: "/2025-ubuntu-terminal/生日礼物.png",
                 content: "[Image: 生日礼物.png]",
                 hidden: true,
               },
                "惊喜生日派对.jpg": {
                 name: "惊喜生日派对.jpg",
                 type: "image",
-                imagePath: "/惊喜生日派对.jpg",
+                imagePath: "/2025-ubuntu-terminal/惊喜生日派对.jpg",
                 content: "[Image: 惊喜生日派对.jpg]",
                 hidden: true,
               },
