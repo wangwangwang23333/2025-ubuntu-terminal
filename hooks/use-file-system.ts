@@ -190,9 +190,6 @@ export function useFileSystem() {
   cd <path>       - Change directory
   pwd             - Print working directory
   cat <file>      - Display file contents
-  mkdir <dir>     - Create a new directory
-  touch <file>    - Create a new file
-  rm <file>       - Remove a file
   clear           - Clear the terminal
   echo <text>     - Display text
   whoami          - Display current user
@@ -333,99 +330,6 @@ export function useFileSystem() {
         return { output: node.content || "", error: false }
       }
 
-      case "mkdir": {
-        if (!args[0]) {
-          return { output: "mkdir: missing operand", error: true }
-        }
-
-        const newDirName = args[0]
-        const node = getNodeAtPath(currentDir)
-
-        if (node && node.children && newDirName in node.children) {
-          return { output: `mkdir: cannot create directory '${newDirName}': File exists`, error: true }
-        }
-
-        setFileSystem((prev) => {
-          const newFS = JSON.parse(JSON.stringify(prev))
-          let current = newFS
-          for (const segment of currentDir) {
-            current = current[segment]?.children || current[segment]
-          }
-          if (current.children) {
-            current.children[newDirName] = {
-              name: newDirName,
-              type: "directory",
-              children: {},
-            }
-          }
-          return newFS
-        })
-
-        return { output: "", error: false }
-      }
-
-      case "touch": {
-        if (!args[0]) {
-          return { output: "touch: missing file operand", error: true }
-        }
-
-        const newFileName = args[0]
-        const node = getNodeAtPath(currentDir)
-
-        if (node && node.children && newFileName in node.children) {
-          return { output: "", error: false }
-        }
-
-        setFileSystem((prev) => {
-          const newFS = JSON.parse(JSON.stringify(prev))
-          let current = newFS
-          for (const segment of currentDir) {
-            current = current[segment]?.children || current[segment]
-          }
-          if (current.children) {
-            current.children[newFileName] = {
-              name: newFileName,
-              type: "file",
-              content: "",
-            }
-          }
-          return newFS
-        })
-
-        return { output: "", error: false }
-      }
-
-      case "rm": {
-        if (!args[0]) {
-          return { output: "rm: missing operand", error: true }
-        }
-
-        const targetName = args[0]
-        const node = getNodeAtPath(currentDir)
-
-        if (!node || !node.children || !(targetName in node.children)) {
-          return { output: `rm: cannot remove '${targetName}': No such file or directory`, error: true }
-        }
-
-        if (node.children[targetName].type === "directory") {
-          return { output: `rm: cannot remove '${targetName}': Is a directory`, error: true }
-        }
-
-        setFileSystem((prev) => {
-          const newFS = JSON.parse(JSON.stringify(prev))
-          let current = newFS
-          for (const segment of currentDir) {
-            current = current[segment]?.children || current[segment]
-          }
-          if (current.children) {
-            delete current.children[targetName]
-          }
-          return newFS
-        })
-
-        return { output: "", error: false }
-      }
-
       case "clear":
         return { output: "\x1Bc", error: false }
 
@@ -451,8 +355,8 @@ export function useFileSystem() {
     const cmd = parts[0]
     // 可用的命令列表（不含 secretfile）
     const commands = [
-      "help", "ls", "cd", "pwd", "cat", "mkdir", 
-      "touch", "rm", "clear", "echo", "whoami", "date"
+      "help", "ls", "cd", "pwd", "cat", 
+      "clear", "echo", "whoami", "date"
     ]
     // secretfile 只在完整输入 sec 或 sec+空格时补全
     if (parts.length === 1 && !input.endsWith(" ")) {
@@ -464,7 +368,7 @@ export function useFileSystem() {
     }
     
     // 如果是需要文件/目录参数的命令
-    if (["ls", "cd", "cat", "rm"].includes(cmd)) {
+    if (["ls", "cd", "cat", ].includes(cmd)) {
       const argInput = parts.slice(1).join(" ")
       const lastArg = argInput || ""
       
