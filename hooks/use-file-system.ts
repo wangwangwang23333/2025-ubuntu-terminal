@@ -40,8 +40,8 @@ const initialFileSystem: FileSystem = {
             name: "images",
             type: "directory",
             children: {
-              "键盘": {
-                name: "键盘",
+              "现存外设": {
+                name: "现存外设",
                 type: "file",
                 content: "This is a hidden secret file!\nOnly visible with secretfile command.",
                 filePath: "/2025-ubuntu-terminal/info",
