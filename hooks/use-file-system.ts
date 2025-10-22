@@ -87,7 +87,7 @@ const initialFileSystem: FileSystem = {
           ".bashrc": {
             name: ".bashrc",
             type: "file",
-            content: "# Bash configuration file\nexport PATH=/usr/local/bin:$PATH",
+            content: "# Bash configuration file\nexport PATH=/usr/local/bin:$PATH\nencrypted_algorithm=polybius_square",
             hidden: true,
           },
           ".ssh": {
@@ -98,7 +98,7 @@ const initialFileSystem: FileSystem = {
               "id_rsa": {
                 name: "id_rsa",
                 type: "file",
-                content: "-----BEGIN RSA PRIVATE KEY-----\n(encrypted key content)",
+                content: "-----BEGIN ENCRYPTED KEY-----\n(21 34 31 31 34 52 44 23 15 33 15 52 35 23 34 44 34 43)",
                 hidden: true,
               },
             },
