@@ -77,7 +77,14 @@ const initialFileSystem: FileSystem = {
           downloads: {
             name: "downloads",
             type: "directory",
-            children: {},
+            children: {
+               "po**hub.mp4": {
+                name: "po**hub.mp4",
+                type: "file",
+                content: "别看了，这个视频是坏的！",
+                hidden: true,
+              },
+            },
           },
           "hello.txt": {
             name: "hello.txt",
