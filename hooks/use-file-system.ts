@@ -98,7 +98,7 @@ const initialFileSystem: FileSystem = {
               "id_rsa": {
                 name: "id_rsa",
                 type: "file",
-                content: "-----BEGIN ENCRYPTED KEY-----\n(21 34 31 31 34 52 44 23 15 33 15 52 35 23 34 44 34 43)",
+                content: "-----BEGIN ENCRYPTED KEY-----\n(21 34 31 31 34 62 44 23 15 33 15 62 35 23 34 44 34 43)",
                 hidden: true,
               },
             },
