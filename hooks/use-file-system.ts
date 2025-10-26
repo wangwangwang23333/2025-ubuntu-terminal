@@ -81,7 +81,7 @@ const initialFileSystem: FileSystem = {
                "po**hub.mp4": {
                 name: "po**hub.mp4",
                 type: "file",
-                content: "别看了，这个视频是坏的！",
+                content: "别想了🙄，这个视频是坏的！",
                 hidden: true,
               },
             },
@@ -192,17 +192,16 @@ export function useFileSystem() {
     switch (cmd) {
       case "help":
         return {
-          output: `Available commands:
-  ls [path]       - List directory contents
-  cd <path>       - Change directory
-  pwd             - Print working directory
-  cat <file>      - Display file contents
-  clear           - Clear the terminal
-  echo <text>     - Display text
-  whoami          - Display current user
-  date            - Display current date and time
-  help            - Show this help message
-  You may also press tab for command and file name completions
+          output: `可用命令：
+  ls [path]       - 列出目录内容
+  cd <path>       - 切换目录
+  pwd             - 打印当前目录
+  cat <file>      - 显示文件内容
+  echo <text>     - 显示文本
+  whoami          - 显示当前用户
+  date            - 显示当前日期和时间
+  help            - 显示帮助信息
+  你也可以按 Tab 键进行命令和文件名补全
   `,
           error: false,
         }
@@ -220,12 +219,12 @@ export function useFileSystem() {
       case "ls": {
         const targetPath = args[0] ? resolvePath(args[0]) : currentDir
         if (!targetPath) {
-          return { output: `ls: cannot access '${args[0]}': No such file or directory`, error: true }
+          return { output: `ls: 无法访问 '${args[0]}': 没有这个文件或目录`, error: true }
         }
 
         const node = getNodeAtPath(targetPath)
         if (!node) {
-          return { output: `ls: cannot access '${args[0]}': No such file or directory`, error: true }
+          return { output: `ls: 无法访问 '${args[0]}': 没有这个文件或目录`, error: true }
         }
 
         if (node.type === "file") {
@@ -262,16 +261,16 @@ export function useFileSystem() {
 
         const targetPath = resolvePath(args[0])
         if (!targetPath) {
-          return { output: `cd: ${args[0]}: No such file or directory`, error: true }
+          return { output: `cd: ${args[0]}: 没有这个文件或目录`, error: true }
         }
 
         const node = getNodeAtPath(targetPath)
         if (!node) {
-          return { output: `cd: ${args[0]}: No such file or directory`, error: true }
+          return { output: `cd: ${args[0]}: 没有这个文件或目录`, error: true }
         }
 
         if (node.type !== "directory") {
-          return { output: `cd: ${args[0]}: Not a directory`, error: true }
+          return { output: `cd: ${args[0]}: 不是一个目录`, error: true }
         }
 
         setCurrentDir(targetPath)

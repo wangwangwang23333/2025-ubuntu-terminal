@@ -94,11 +94,11 @@ i::...:.i,;.jLLLLtjittttLfffjttttiiiittjKji;EG::::
     },
     {
       type: "output",
-      content: "Welcome to Ubuntu Terminal\nBuild on Oct. 23",
+      content: "欢迎登录到定制版操作系统\nBuild on Oct. 23",
     },
     {
       type: "output",
-      content: 'Type "help" to see available commands',
+      content: '输入 "help" 查看可用命令',
     },
     {
       type: "output",
