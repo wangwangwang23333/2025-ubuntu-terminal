@@ -35,62 +35,7 @@ export default function Terminal() {
   const [output, setOutput] = useState<OutputLine[]>([
     {
       type: "output",
-      content: `LLG;..:::,t         .:::::,:::::::GjtiGiDDDDDDDDDD
-LLL...::, tt      .::,,,:,,,,,,:,,:;t;GG;GfDDDGDDD
-LLG...,,:  t:   j:,,;;;;;:,;,;,,,:,::LLL,DD:,ELDDD
-LLL...,,:  .t..t:,;;;;;;;;;,,,;,,:,;::.,;t,L;fLDDD
-GGG...,,:   ttt:;;;iiii;;,;,,,,:;;iti,::DLDDi,iDDD
-GGG...,,:   jt,,,;;i;;;i;;,,,,ijjiffji,::DDDDDDDDD
-GGG...,,,   jj:i.i.iiii;;;,;ijffftjfti,;,,DDDDDDDD
-EEE...,,;   j,.:.i.,i,;;;;itjfjfjjfft;;;,,DDDDDDDD
-LfL...,,;    .. t.. .  ;;tjjjfjtttjt;;iti;,DDDDDDj
-Lff..:,,:   ....:i,....ittjtjtii;it;;iiii;;iijLDD:
-Ljf..:,,.  . ,;iiii,i,,jtttjti;,,;i;ittiii;;iiiii:
-Lff..:,,. ..,,;iiiittijititi;;;;,itijttttttiiiiii:
-fLj..,,, ..:,i;iitjtijtttjii;;i;itjjfjjjjttiiiiii:
-tj;..,,, ..:,;,;ijtitjjtjjttititttjfttjtjtttiiiit.
-jj:..,,,..::,ttjjttijtiifttttttjjjjjjtjjtttiiiii;.
-tj...,,,..:,;jfjtjttjtttjjtjjjjffffjjjtttttitiii:.
-tj...,,,,,:;tttjtttttttjttjfffffjfLfjjjjtjtti;ii..
-it...,,,,,:,;,,,tittttttjjjfffffjfffjtjjjtttitii..
-it...,,,,:;::::,jfi;,ijffffjffjjjffjfttttitiiiii..
-tt...,,,::::,,:,,,,,;GjiijtfffjLfffjjjtttttttiii..
-tj..:::::,,,,,,;,,,,;;,;;;fDLjttijGLfffjjjjttii:..
-jf.::::::,,,,,,,,,;;,;;,;;;;;;iijtGGDDDDDLLLfii...
-D::::,,,,,,,,,,,;,;;;;;;;;;;;;;;itEEGEEEEEEDEDi...
-ti,:::,,,,,,;,,;,;;;;;;;;;;;;;;;fKEDEGEEEEEDDGL...
-GGLj;,,,,;;;,;,;;,;;i;;;;;,;;;tWKDGEEEDDGDDKED;,:.
-GGDDDj;,,;;;;;,,,,;;;;;;;;;;iLEEEGGGEEEEDKEKDDf...
-GDDDEEGj;;;;;;;;;;;;i;,;;;;jWDDEGDEEDDGEKEEEGD;::.
-DDDEEEE,Lj;;;;i;;;;;;;;;;jWKEELDKGEDDGGDEEEGGG....
-DDEEED:fKKLfii;;;;;;;;ijWWKEDDDDEEGDDGGEKDLtDj....
-DDDD..;jEWWWKLfjtiitjDKKKKEEEEEEDEGDDGDEEffiGt....
-f:....;fjEWKKWKKKKKKWKKKKKEEKEEDDDLGDLGDDGjtLi....
-D....:.jLKKKKKKKKKKWWKEKKEEEEEEEDGLfGLGDEt,jj,....
-L.....,LDEKKKKKEKKKWKKDKKEDEEEEEDGGDGLDDL,:jt:....
-t..:..fGGEEEKKKEKKKKKEEKKEEDEEEDGLGGtLGDfi:t;.....
-f.:::jLDGDffjEEGEKEEEEEEKEEDDDGDEDftijGLtG:ti....:
-j....LLDDEEEWDDEEDDKEDLGDEGLGGGEEjttijLLtj.;i.....
-t.....tjGDGiGfGLEEDKKDfjLDffGGEGfjtiittfj:ti;:...:
-t.....;jjGjjiLfLEDDELLLfLGDGGELLjtiiiitttiit:::...
-t.....f;t,:f,;DGLGEKDGLfjfjjftfjttiiiiiifj..::::.:
-t.........:fi,jffLLLEjLfjjffjfjttiiiiiiiEt,.::::::
-i.:.........ttfffjfffGifjjjjfttiiiiiiiiiEG;.::::::
-i::...........ittjLjjfftjtjjjtttiiiiiiiiEGti::::::
-i::......:ifGDGtjftttjjfLLttjttiittiiiiiKLtj::::::
-i::...:.....DLLLfjitttjttfLttttttttiiitiKfitD:::::
-i::...:.i,;.jLLLLtjittttLfffjttttiiiittjKji;EG::::
-;::..... ....LLLLGttijLfjjjjjftttiiitjtLf,i;EE::::
-,::...D....f.GLLGGLtfjjttjLDjjtiiitttjjE,j;,EKD:::
-,::...D....G.GLGGDLGjfGLEffttttttttjjjLj;;;jKEKG::
-:::...G....f,GLLGGGGtjjjjfttttttttjffLEf,::KEEEEEj
-:::...LLt..LfGLLGGGGGtjjjjttittttjffLEtt:.tKEEEEED
-:::...,DD..:fGGLGGGDGiittttiiittjfLLDf:;,ttKKEEEEE
-::.....DD..DLDGLGGWEDEii;;;iitjffLGDLttjf,KKKEEEEE
-:;....,D.:::GDGGGEEGGEjiiiiitffLGGDj,:;::;KKEKEEEE
-:j.:t,,,,:,,DGGfGGGDDKDjfDGjjjfLGGt:LEK:ttKEEEEEEE
-:.G,,f:,,,,fDGGfEKEDDKEf;;DLjjfLt;tEEDjDiKKEKEEKEE
-:.;t:,,,,,,DEGGKDKK#KWEf:,tjfj,tiDKijffGjKKEEEEEKE`
+      content: `UBUNTU SYSTEM`,
     },
     {
       type: "output",
