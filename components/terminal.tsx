@@ -94,7 +94,7 @@ i::...:.i,;.jLLLLtjittttLfffjttttiiiittjKji;EG::::
     },
     {
       type: "output",
-      content: "欢迎登录到定制版操作系统\nBuild on Oct. 23",
+      content: "欢迎登录到定制版操作系统\n更新于10月11日",
     },
     {
       type: "output",
