@@ -292,21 +292,21 @@ export function useFileSystem() {
 
       case "cat": {
         if (!args[0]) {
-          return { output: "cat: missing file operand", error: true }
+          return { output: "cat: 缺少文件操作数", error: true }
         }
 
         const targetPath = resolvePath(args[0])
         if (!targetPath) {
-          return { output: `cat: ${args[0]}: No such file or directory`, error: true }
+          return { output: `cat: ${args[0]}: 没有该文件或目录`, error: true }
         }
 
         const node = getNodeAtPath(targetPath)
         if (!node) {
-          return { output: `cat: ${args[0]}: No such file or directory`, error: true }
+          return { output: `cat: ${args[0]}: 没有该文件或目录`, error: true }
         }
 
         if (node.type === "directory") {
-          return { output: `cat: ${args[0]}: Is a directory`, error: true }
+          return { output: `cat: ${args[0]}: 是一个目录`, error: true }
         }
 
         // 如果是图片文件，返回特殊格式的JSON
@@ -336,9 +336,6 @@ export function useFileSystem() {
         return { output: node.content || "", error: false }
       }
 
-      case "clear":
-        return { output: "\x1Bc", error: false }
-
       case "echo":
         return { output: args.join(" "), error: false }
 
@@ -352,7 +349,7 @@ export function useFileSystem() {
         return { output: "", error: false }
 
       default:
-        return { output: `${cmd}: command not found`, error: true }
+        return { output: `${cmd}: 命令未找到`, error: true }
     }
   }
 
@@ -362,7 +359,7 @@ export function useFileSystem() {
     // 可用的命令列表（不含 secretfile）
     const commands = [
       "help", "ls", "cd", "pwd", "cat", 
-      "clear", "echo", "whoami", "date"
+      "echo", "whoami", "date"
     ]
     // secretfile 只在完整输入 sec 或 sec+空格时补全
     if (parts.length === 1 && !input.endsWith(" ")) {
